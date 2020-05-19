@@ -1,3 +1,25 @@
 * {
   box-sizing: border-box;
 }
+
+
+.drone_main {
+  &__text {
+    background-image: url('background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(255,255,255,0.4);
+    background-blend-mode: lighten;
+    height: 500px;
+    text-align: center;
+    color: rgb(34, 58, 58);
+    .tytle {
+      font-weight: 800;
+      font-size: 100px;
+      padding-top: 150px;
+    }
+    .message {
+      font-size: 50px;
+    }
+  }
+}
