@@ -1,0 +1,58 @@
+.drone_new
+  = form_for @drone, local: true do |f|
+    .drone_input
+      %label.drone_input__label
+        画像の登録
+        %span.required 必須
+      %p.drone_input__text 最大5枚まで登録可能
+      .drone_input__label__imgs
+        = f.fields_for :imgs do |img|
+          .preview
+            //ここにプレビュー表示
+          %label.img_input
+            .img_message
+              ドラッグ & ドロップ
+              %br
+              クリックでアップロード
+            .img_input__tag
+              = img.file_field :src, class:"img_input__tag__area", type: 'file', multiple: true, accept: "image/*"
+
+    .drone_input
+      %label.drone_input__label
+        ドローン名
+
+    .drone_input
+      %label.drone_input__label
+        詳細情報
+
+    .drone_input
+      %label.drone_input__label
+        メーカー情報
+
+    .drone_input
+      %label.drone_input__label
+        大きさ
+
+    .drone_input
+      %label.drone_input__label
+        重量
+
+    .drone_input
+      %label.drone_input__label
+        単位時間あたりの価格
+
+    .drone_input
+      %label.drone_input__label
+        ステーション
+
+    .drone_input
+      %label.drone_input__label
+        選択可能エリア
+
+    .drone_input
+      %label.drone_input__label
+        重量制限
+
+    .drone_input
+      %label.drone_input__label
+        大きさ制限

@@ -1,0 +1,2 @@
+class DroneFeature < ApplicationRecord
+end
