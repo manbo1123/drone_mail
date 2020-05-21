@@ -5,12 +5,12 @@
         画像の登録
         %span.required 必須
       %p.drone_input__text 最大5枚まで登録可能
-      .drone_input__label__imgs
+      .drone_input__imgs
         = f.fields_for :imgs do |img|
           .preview
             //ここにプレビュー表示
           %label.img_input
-            .img_message
+            %p.img_message
               ドラッグ & ドロップ
               %br
               クリックでアップロード
@@ -20,39 +20,81 @@
     .drone_input
       %label.drone_input__label
         ドローン名
-
+        %span.required 必須
+        = f.text_field :name, class: "drone_input__label__text_form", id: "drone_name", placeholder: "30文字まで"
     .drone_input
       %label.drone_input__label
         詳細情報
-
+        %span.required 必須
+        = f.text_area :introduction, placeholder: "必須 1,000文字以内\r\n例）飛行安定性が高く、運送時の振動衝撃が少なめです。\r\n冷蔵機能を搭載しています。", rows: "7", class: "drone_input__text_area"
+        .drone_input__label__words_count
+          %span.countup 0 
+          %span /1000
     .drone_input
-      %label.drone_input__label
-        メーカー情報
-
+      = f.fields_for :maker do |m|
+        %label.drone_input__label
+          メーカー情報
+          %span.option 任意
+        .pulldown#maker_select
+          =m.text_field :name, class: "drone_input__label__text_form", placeholder: "メーカー情報"
+        %label.drone_input__label
+          タイプ
+          %span.option 任意
+        .pulldown#maker_select
+          =m.text_field :type, class: "drone_input__label__text_form", placeholder: "型、機種など"
     .drone_input
       %label.drone_input__label
         大きさ
-
+        %span.required 必須
+      .pulldown#size_select
+        =f.collection_select :size_id, Size.all, :id, :name, {include_blank: "選択してください"}, {class: "size_box"}
     .drone_input
       %label.drone_input__label
         重量
-
+        %span.required 必須
+      .pulldown#weight_select
+        =f.collection_select :weight_id, Weight.all, :id, :name, {include_blank: "選択してください"}, {class: "weight_box"}
     .drone_input
       %label.drone_input__label
-        単位時間あたりの価格
+        飛行速度
+        %span.required 必須
+      .pulldown#speed_select
+        =f.collection_select :speed_id, Speed.all, :id, :name, {include_blank: "選択してください"}, {class: "speed_box"}
 
     .drone_input
       %label.drone_input__label
         ステーション
-
+        %span.required 必須
+      .pulldown#parent_box
+        = f.select :station, options_for_select( @station_parent_array.map{|c| [c[:name], c[:id]]}),{include_blank: "選択してください"}, { class: "parent_station_box", id: "parent_station"}
     .drone_input
       %label.drone_input__label
-        選択可能エリア
-
+        飛行距離
+        %span.required 必須
+      .area_box.number_box
+        =f.number_field :area, class: "area_box__form", min: 10, max: 9999999, placeholder: "0"
+        %p.area_form
+          km 以内
     .drone_input
       %label.drone_input__label
-        重量制限
-
+        荷物の大きさ制限
+        %span.required 必須
+      .pulldown#space_select
+        =f.collection_select :space_id, Space.all, :id, :name, {include_blank: "選択してください"}, {class: "space_box"}
     .drone_input
       %label.drone_input__label
-        大きさ制限
+        荷物の重量制限
+        %span.required 必須
+      .pulldown#load_select
+        =f.collection_select :load_id, Load.all, :id, :name, {include_blank: "選択してください"}, {class: "load_box"}
+    .drone_input
+      %label.drone_input__label
+        単位時間あたりの価格
+        %span.required 必須
+      .price_box.number_box
+        %p.price_form
+          ¥
+        =f.number_field :price, class: "price_box__form", min: 100, max: 9999999, placeholder: "0"
+    .new_btn
+      =f.submit "登録", class: "new_btn__post"
+      =link_to "戻る", root_path, class:"new_btn__return"

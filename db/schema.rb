@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_20_131211) do
+ActiveRecord::Schema.define(version: 2020_05_21_125958) do
 
   create_table "drone_features", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "feature_id", null: false
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 2020_05_20_131211) do
     t.integer "weight_id", null: false
     t.integer "load_id", null: false
     t.integer "space_id", null: false
+    t.integer "speed_id", null: false
   end
 
   create_table "imgs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -51,7 +52,7 @@ ActiveRecord::Schema.define(version: 2020_05_20_131211) do
 
   create_table "stations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
-    t.string "ancestry", null: false
+    t.string "ancestry"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
