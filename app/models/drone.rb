@@ -9,6 +9,7 @@ class Drone < ApplicationRecord
   belongs_to_active_hash :speed
   belongs_to_active_hash :load
   belongs_to_active_hash :space
+  accepts_nested_attributes_for :imgs, allow_destroy: true
 
   enum status: {requestable: 0, in_transit: 1,in_preparation: 2 }
 

@@ -1,0 +1,61 @@
+= render "layouts/header"
+.mypage
+  .mypage__band
+    = link_to mypage_index_path, class: "mypage__band__btn" do
+      マイページ
+    .mypage__band__btn
+      ステーション検索
+    .mypage__band__btn
+      予約確認・変更
+    .mypage__band__btn
+      利用履歴
+    .mypage__band__btn
+      登録情報
+  .content
+    .side    
+      .mypage__body
+        .mypage__body__message
+          2020年5月22日（金）
+          .mypage__body__message__user
+            ようこそ　
+            .mypage__body__message__user__name
+              ユーザー　
+            %span さん
+        .mypage__body__price
+          直近の利用金額　2940 円
+          .mypage__body__price__btn
+            確認
+        .mypage__body__tiket
+          .mypage__body__tiket__title
+            ドローンシェアeチケット
+          .mypage__body__tiket__num
+            .mypage__body__tiket__num__label
+              保有枚数 
+            .mypage__body__tiket__num__btn
+              1枚
+          .mypage__body__tiket__limit
+            .mypage__body__tiket__limit__label
+              有効期限最短
+            .mypage__body__tiket__limit__date
+              2020年07月14日
+          #p
+            ＞ドローンシェアeチケットとは何ですか？
+    .mypage__request
+      .mypage__request__favorite
+        .mypage__request__favorite__title    
+          お気に入りステーション
+        .mypage__request__favorite__station
+          ステーション名
+          .mypage__request__favorite__station__btn
+            送信
+        #p
+          ※各ステーション詳細ページの「お気に入りに追加」ボタンをクリックすると、お気に入りステーションに登録できます。
+      .mypage__request__history
+        .mypage__request__history__title
+          予約ステーション履歴から選択
+        .select
+          .mypage__request__history__select
+            選択肢
+          .mypage__request__history__btn
+            予約
+= render "layouts/footer"

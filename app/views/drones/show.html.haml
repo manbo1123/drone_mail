@@ -1,0 +1,40 @@
+= render "layouts/header"
+.drone_show
+  .drone_show__name
+    ドローン名
+  .drone_show__box
+    .drone_show__box__imgs
+      No Image
+    .drone_show__box__content
+      .drone_show__box__content__owner.block
+        所有者
+      .drone_show__box__content__station.block
+        ステーション
+      .drone_show__box__content__maker.block
+        メーカー情報
+      .drone_show__box__content__size.block
+        大きさ、重量
+      .drone_show__box__content__spec.block
+        速度、距離
+      .drone_show__box__content__postage.block
+        重さ制限、大きさ制限
+    .drone_show__box__content.real_data
+      .drone_show__box__content__owner.block
+        所有者
+      .drone_show__box__content__station.block
+        ステーション
+      .drone_show__box__content__maker.block
+        メーカー情報
+      .drone_show__box__content__size.block
+        大きさ、重量
+      .drone_show__box__content__spec.block
+        速度、距離
+      .drone_show__box__content__postage.block
+        重さ制限、大きさ制限
+  .drone_show__price
+    ¥ 100   円/時間  (税込)
+  .drone_show__introduction
+    詳細情報
+  .btn
+    =link_to "配達依頼に進む", root_path, class:"new_btn"
+= render "layouts/footer"
