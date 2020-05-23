@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_22_152144) do
+ActiveRecord::Schema.define(version: 2020_05_23_015325) do
 
   create_table "drone_features", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "feature_id", null: false
@@ -78,12 +78,6 @@ ActiveRecord::Schema.define(version: 2020_05_22_152144) do
     t.string "first_name", null: false
     t.string "family_name_kana", null: false
     t.string "first_name_kana", null: false
-    t.date "birthday", null: false
-    t.integer "post_code", null: false
-    t.integer "prefecture_code", null: false
-    t.string "city", null: false
-    t.string "home_number", null: false
-    t.string "building_name"
     t.integer "phone_number"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
