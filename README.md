@@ -12,12 +12,6 @@
 |family_name|string|null:false|
 |first_name_kana|string|null:false|
 |family_name_kana|string|null:false|
-|birthday|date|null:false|
-|post_code|integer(7)|null:false|
-|prefecture_code|integer|null:false|
-|city|string|null:false|
-|house_number|string|null:false|
-|building_name|string||
 |phone_number|string| unique: true|
 
 ### Association
@@ -30,7 +24,6 @@
 -  has_one :card, dependent: :destroy
 - has_many :owner_drones, foreign_key: "owner_id", class_name: "drones"
 - has_many :buyer_drones, foreign_key: "buyer_id", class_name: "drones"
-- Gem：jp_prefectureを使用して都道府県コードを取得
 
 
 ## profiles table

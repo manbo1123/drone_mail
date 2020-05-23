@@ -1,0 +1,163 @@
+.mypage {
+  margin: 20px 0;
+  &__band {
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    font-size: 12px;
+    font-weight: 900;
+    background-color: rgba(42, 73, 73, 0.644);
+    &__btn {
+      color: white;
+      text-decoration: none;
+      width: 120px;
+      border-right: 1px solid white;
+      border-left: 1px solid white;
+      line-height: 50px;
+      text-align: center;
+    }
+  }
+  .content {
+    margin: 0 auto;
+    max-width: 900px;
+    display: flex;
+  }
+  &__body {
+    margin: 30px 10px;
+    width: 230px;
+    &__message {
+      border-top: 3px solid rgb(255, 72, 0);
+      padding: 5px;
+      border-bottom: 1px dashed rgba(42, 73, 73, 0.644);
+      &__user {
+        display: flex;
+        &__name {
+          font-weight: 900;
+          color: rgb(28, 129, 129);
+        }
+      }
+    }
+    &__price {
+      padding: 15px 0;
+      display: flex;
+      border-bottom: 1px solid rgba(89, 121, 121, 0.582);
+      &__btn {
+        margin-left: 10px;
+        width: 40px;
+        font-size: 13px;
+        font-weight: 900;
+        border-radius: 3px;
+        color: white;
+        text-align: center;
+        background-color: rgb(245, 81, 16);
+      }
+    }
+
+    &__tiket {
+      margin-top: 20px;
+      padding: 15px 0;
+      border-top: 3px solid rgb(255, 72, 0);
+      &__title {
+        font-weight: 900;
+        font-size: 18px;
+      }
+      &__num {
+        margin: 10px 0;
+        display: flex;
+        &__label {
+          font-size: smaller;
+          width: 85px;
+          text-align: center;
+          background-color: rgba(89, 121, 121, 0.3);
+        }
+        &__btn {
+          margin-left: 3px;
+        }
+      }
+      &__limit {
+        display: flex;
+        margin-bottom: 5px;
+        &__label {
+          font-size: smaller;
+          width: 85px;
+          text-align: center;
+          background-color: rgba(89, 121, 121, 0.3);
+        }
+        &__date {
+          margin-left: 3px;
+        }
+      }
+      #p {
+        font-size: 13px;
+      }
+    }
+  }
+  &__request {
+    padding: 30px;
+    &__favorite {
+      padding-bottom: 30px;
+      &__title {
+        border-bottom: 1px solid rgba(89, 121, 121, 0.3);
+        font-size: 17px;
+        font-weight: 900;
+      }
+      &__station {
+        display: flex;
+        justify-content: space-between;
+        margin: 10px 0;
+        height: 30px;
+        border-radius: 3px;
+        width: 100%;
+        background-color: whitesmoke;
+        &__btn {
+          margin: 0 10px;
+          width: 40px;
+          height: 25px;
+          font-size: 13px;
+          font-weight: 900;
+          line-height: 25px;
+          border-radius: 3px;
+          color: white;
+          text-align: center;
+          background-color: rgb(245, 81, 16);
+        }
+      }
+      #p {
+        font-size: 12px;
+      }
+    }
+    &__history {
+      padding-bottom: 30px;
+      &__title {
+        border-bottom: 1px solid rgba(89, 121, 121, 0.3);
+        font-size: 17px;
+        font-weight: 900;
+      }
+      .select {
+        display: flex;
+        justify-content: space-between;
+      }
+      &__select {
+        display: flex;
+        justify-content: space-between;
+        margin: 10px 0;
+        height: 30px;
+        border-radius: 3px;
+        width: 100%;
+        background-color: whitesmoke;
+      }
+      &__btn {
+        margin: 10px;
+        width: 40px;
+        height: 25px;
+        font-size: 13px;
+        font-weight: 900;
+        line-height: 25px;
+        border-radius: 3px;
+        color: white;
+        text-align: center;
+        background-color: rgb(245, 81, 16);
+      }
+    }
+  }
+}

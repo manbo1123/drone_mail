@@ -1,0 +1,45 @@
+= render 'layouts/header'
+%h2 Sign In
+= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+  = render "devise/shared/error_messages", resource: resource
+  .field
+    = f.label :nickname
+    %br/
+    = f.text_field :nickname, autofocus: true, autocomplete: "nickname", placeholder:"例）ドローン太郎"
+  .field
+    = f.label :email
+    %br/
+    = f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"PC・携帯どちらでも可"
+  .field
+    = f.label :password
+    %br/
+    = f.password_field :password, autocomplete: "new-password", placeholder:"6文字以上の半角英数字"
+  .field
+    = f.label :password（確認）
+    %br/
+    = f.password_field :password_confirmation, autocomplete: "new-password", placeholder:"6文字以上の半角英数字"
+  .field
+    = f.label :family_name
+    %br/
+    = f.text_field :family_name, autofocus: true, autocomplete: "family_name", placeholder:"例）山田（全角）"
+  .field
+    = f.label :first_name
+    %br/
+    = f.text_field :first_name, autofocus: true, autocomplete: "first_name", placeholder:"例）太朗（全角）"
+  .field
+    = f.label :family_name（カナ）
+    %br/
+    = f.text_field :family_name_kana, autofocus: true, autocomplete: "family_name", placeholder:"例）ヤマダ（全角）"
+  .field
+    = f.label :first_name（カナ）
+    %br/
+    = f.text_field :first_name_kana, autofocus: true, autocomplete: "first_name", placeholder:"例）タロウ（全角）"
+  .field
+    = f.label :phone_number
+    %br/
+    = f.number_field :phone_number, autofocus: true, autocomplete: "phone_number", placeholder:"例）1234567"
+
+  .actions
+    = f.submit "登録"
+= render "devise/shared/links"
+= render 'layouts/footer'

@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box;
+}
+//背景画像
+.drone_main {
+  &__text {
+    background-image: url('background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(255,255,255,0.4);
+    background-blend-mode: lighten;
+    height: 500px;
+    text-align: center;
+    color: rgb(34, 58, 58);
+    .tytle {
+      font-weight: 800;
+      font-size: 100px;
+      padding-top: 150px;
+    }
+    .message {
+      font-size: 50px;
+    }
+  }
+  //ドローン一覧
+  &__index {
+    margin: 30px 10px;
+    font-size: 25px;
+    &__box {
+      display: flex;
+      margin-top: 20px;
+    }
+  }
+  .drone_box {
+    margin: 5px;
+    border: 1px solid lightgray;
+    height: 270px;
+    width: 210px;
+    font-size: 20px;
+    &__img {
+      background-color: rgb(211, 226, 225);
+      font-size: 45px;
+      line-height: 220px;
+      text-align: center;
+      width: 210px;
+      height: 210px;
+    }
+    .drone_img {
+      max-width: 210px;
+      max-height: 270px;
+    }
+    &__station {
+      background-color: rgb(190, 207, 206);
+    }
+    &____coment {
+      background-color: linen;
+    }
+  }
+}
