@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_23_015325) do
+ActiveRecord::Schema.define(version: 2020_05_23_174539) do
 
   create_table "drone_features", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "feature_id", null: false
@@ -33,9 +33,9 @@ ActiveRecord::Schema.define(version: 2020_05_23_015325) do
     t.integer "load_id", null: false
     t.integer "space_id", null: false
     t.integer "speed_id", null: false
-    t.bigint "owner_id"
+    t.bigint "owner_id", null: false
     t.bigint "buyer_id"
-    t.index ["buyer_id"], name: "index_drones_on_buyer_id"
+    t.index ["buyer_id"], name: "fk_rails_1a54c65bae"
     t.index ["owner_id"], name: "index_drones_on_owner_id"
   end
 
@@ -90,6 +90,7 @@ ActiveRecord::Schema.define(version: 2020_05_23_015325) do
 
   add_foreign_key "drone_features", "drones"
   add_foreign_key "drones", "users", column: "buyer_id"
+  add_foreign_key "drones", "users", column: "owner_id"
   add_foreign_key "imgs", "drones"
   add_foreign_key "profiles", "users"
 end
