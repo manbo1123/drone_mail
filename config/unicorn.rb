@@ -1,17 +1,17 @@
 #サーバ上でのアプリコードが設置されているディレクトリを変数に入れておく
-app_path = File.expand_path('../../', __FILE__)
+app_path = File.expand_path('../../../', __FILE__)
 #アプリサーバの性能を決定
 worker_processes 1
-#アプリの設置されているディレクトリを指定
-working_directory app_path
-#Unicorn起動に必要なファイルの設置場所を指定
-pid "#{app_path}/tmp/pids/unicorn.pid"
-#ポート番号を指定
-listen "#{app_path}/tmp/sockets/unicorn.sock"
-#エラーのログ記録ファイルを指定
-stderr_path "#{app_path}/log/unicorn.stderr.log"
-#通常のログ記録ファイルを指定
-stdout_path "#{app_path}/log/unicorn.stdout.log"
+# currentを指定
+working_directory "#{app_path}/current"
+#Unicorn起動に必要なファイルは、sharedの中を参照するよう変更(自動デプロイ設定のため)
+pid "#{app_path}/shared/tmp/pids/unicorn.pid"
+#ポート番号をsharedの中を参照するよう変更(自動デプロイ設定のため)
+listen "#{app_path}/shared/tmp/sockets/unicorn.sock"
+#エラーのログ記録ファイルをsharedの中を参照するよう変更(自動デプロイ設定のため)
+stderr_path "#{app_path}/shared/log/unicorn.stderr.log"
+#通常のログ記録ファイルをsharedの中を参照するよう変更(自動デプロイ設定のため)
+stdout_path "#{app_path}/shared/log/unicorn.stdout.log"
 #応答を待つ上限時間を設定
 timeout 60
 
