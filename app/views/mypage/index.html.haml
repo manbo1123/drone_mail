@@ -3,13 +3,13 @@
   .mypage__band
     = link_to mypage_index_path, class: "mypage__band__btn" do
       マイページ
-    .mypage__band__btn
+    = link_to root_path, class: "mypage__band__btn" do
       ステーション検索
-    .mypage__band__btn
+    = link_to root_path, class: "mypage__band__btn" do
       予約確認・変更
-    .mypage__band__btn
+    = link_to root_path, class: "mypage__band__btn" do
       利用履歴
-    .mypage__band__btn
+    = link_to root_path, class: "mypage__band__btn" do
       登録情報
   .content
     .side    

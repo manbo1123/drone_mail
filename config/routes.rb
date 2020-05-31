@@ -4,5 +4,9 @@ Rails.application.routes.draw do
   resources :drones, expect: [:index] do
     get 'request', to: 'drones#request'
   end
-  resources :mypage, only: [:index]
+
+  resources :mypage, only: [:index] do
+    get 'users/edit'
+    patch 'users/update'
+  end
 end

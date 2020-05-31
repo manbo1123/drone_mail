@@ -7,15 +7,16 @@
       %p.drone_input__text 最大5枚まで登録可能
       .drone_input__imgs
         = f.fields_for :imgs do |img|
-          .preview
-            //ここにプレビュー表示
-          %label.img_input
-            %p.img_message
-              ドラッグ & ドロップ
-              %br
-              クリックでアップロード
-            .img_input__tag
-              = img.file_field :src, class:"img_input__tag__area", type: 'file', multiple: true, accept: "image/*"
+          .up_group
+            .preview
+              //ここにプレビュー表示
+            %label.img_input
+              %p.img_message
+                ドラッグ & ドロップ
+                %br
+                クリックでアップロード
+              .img_input__tag
+                = img.file_field :src, class:"img_input__tag__area", type: 'file', multiple: true, accept: "image/*"
 
     .drone_input
       %label.drone_input__label

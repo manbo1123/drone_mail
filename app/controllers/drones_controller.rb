@@ -11,6 +11,18 @@ class DronesController < ApplicationController
 
   def new
     @drone = Drone.new
+    @drone.imgs.build
+  end
+
+  def create
+    @drone = Drone.new(drone_params)
+    maker = Maker.new
+
+    if @drone.save
+      redirect_to root_path
+    else
+      flash.now[:alert] = "登録に失敗しました"
+    end
   end
 
   private
@@ -22,7 +34,7 @@ class DronesController < ApplicationController
     #@drone = Drone.find(params[:id])
   end
 
-  def item_params
+  def drone_params
     params.require(:drone).permit(
     :name, 
     :introduction, 
