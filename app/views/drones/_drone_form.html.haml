@@ -67,7 +67,7 @@
         ステーション
         %span.required 必須
       .pulldown#parent_box
-        = f.select :station, options_for_select( @station_parent_array.map{|c| [c[:name], c[:id]]}),{include_blank: "選択してください"}, { class: "parent_station_box", id: "parent_station"}
+        = f.select :station_id, options_for_select( @station_parent_array.map{|c| [c[:name], c[:id]]}),{include_blank: "選択してください"}, { class: "parent_station_box", id: "parent_station"}
     .drone_input
       %label.drone_input__label
         飛行距離
