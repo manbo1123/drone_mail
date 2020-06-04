@@ -16,13 +16,11 @@ class DronesController < ApplicationController
 
   def create
     @drone = Drone.new(drone_params)
-    makers = Maker.find_or_create_by(name: params[:drone][:maker][:name]) 
-    @drone.update!(maker_id: makers.id)
+    maker = Maker.new
 
-    if @drone.save!
+    if @drone.save
       redirect_to root_path
     else
-      render :new
       flash.now[:alert] = "登録に失敗しました"
     end
   end
@@ -42,12 +40,12 @@ class DronesController < ApplicationController
     :introduction, 
     :price, 
     :area, 
+    :maker_id, 
     :station_id, 
     :size_id, 
     :weight_id, 
     :load_id, 
     :space_id, 
-    :speed_id,
     imgs_attributes: [:src, :_destroy, :id]
     ).merge(owner_id: current_user.id, status: 0)
   end
