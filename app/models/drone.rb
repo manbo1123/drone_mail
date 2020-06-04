@@ -4,6 +4,8 @@ class Drone < ApplicationRecord
   has_many :drone_features
   belongs_to :station
   belongs_to :maker, optional: true
+  belongs_to :owner, class_name: "User"
+  belongs_to :buyer, class_name: "User", optional: true
   belongs_to_active_hash :size
   belongs_to_active_hash :weight
   belongs_to_active_hash :speed
@@ -18,8 +20,10 @@ class Drone < ApplicationRecord
   validates :price, presence: true
   validates :area, presence: true
   validates :status, presence: true
+  validates :station_id, presence: true
   validates :size_id, presence: true
   validates :weight_id, presence: true
   validates :load_id, presence: true
   validates :space_id, presence: true
+  validates :owner_id, presence: true
 end
